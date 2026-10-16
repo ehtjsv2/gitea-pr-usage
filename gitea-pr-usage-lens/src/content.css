@@ -1,0 +1,14 @@
+::highlight(gul-word) {
+  background-color: rgba(255, 196, 0, 0.35);
+}
+
+/* 툴팁에서 diff 줄로 이동했을 때 잠깐 표시 */
+tr.gul-flash {
+  outline: 2px solid rgba(255, 170, 0, 0.9);
+  outline-offset: -2px;
+  animation: gul-flash 1.8s ease-out;
+}
+@keyframes gul-flash {
+  0%, 40% { outline-color: rgba(255, 170, 0, 0.9); }
+  100% { outline-color: rgba(255, 170, 0, 0); }
+}

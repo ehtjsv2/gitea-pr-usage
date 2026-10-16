@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Gitea PR Usage Lens 설정</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Gitea PR Usage Lens</h1>
+
+    <section>
+      <h2>Gitea 주소</h2>
+      <p class="hint">PR을 보는 Gitea 주소를 추가하세요. 하위 경로에 설치된 경우 경로까지 입력합니다. (예: <code>https://git.example.com</code>, <code>https://example.com/gitea</code>)</p>
+      <ul id="instances"></ul>
+      <form id="add-form">
+        <input id="instance-input" type="text" placeholder="https://git.example.com">
+        <button type="submit">추가</button>
+      </form>
+      <p class="hint">추가 후 열려 있는 PR 페이지는 새로고침해야 적용됩니다.</p>
+      <p class="hint" id="registration"></p>
+    </section>
+
+    <section>
+      <h2>토큰 (필수)</h2>
+      <p class="hint">Gitea API는 브라우저 로그인 쿠키를 받지 않기 때문에, 저장소 코드를 읽으려면 <b>주소마다 토큰이 꼭 필요합니다.</b></p>
+      <ol class="hint">
+        <li>Gitea → 오른쪽 위 프로필 → <b>설정</b> → <b>애플리케이션</b></li>
+        <li>새 토큰 생성: 권한은 <code>repository: 읽기</code>만 선택 (Gitea 버전이 오래되어 권한 선택이 없으면 그냥 생성)</li>
+        <li>생성된 토큰을 위 목록의 해당 주소 아래 칸에 붙여넣기 (입력하면 바로 저장됩니다)</li>
+      </ol>
+      <p class="hint">토큰은 이 브라우저의 확장 저장소에만 보관되고(동기화 안 됨), 해당 Gitea 주소로만 전송됩니다.</p>
+    </section>
+
+    <section>
+      <h2>동작</h2>
+      <label>표시 방식
+        <select id="trigger">
+          <option value="hover">마우스만 올려도 표시</option>
+          <option value="alt">Alt 키를 누른 채 올렸을 때만 표시</option>
+        </select>
+      </label>
+      <label>표시 지연 (ms)
+        <input id="hoverDelay" type="number" min="0" step="50">
+      </label>
+    </section>
+
+    <section>
+      <h2>색인 대상</h2>
+      <label>확장자 (쉼표 구분)
+        <textarea id="extensions" rows="3"></textarea>
+      </label>
+      <label>제외 폴더 (쉼표 구분)
+        <textarea id="excludeDirs" rows="2"></textarea>
+      </label>
+      <label>최대 파일 크기 (KB)
+        <input id="maxFileKB" type="number" min="1">
+      </label>
+    </section>
+
+    <div class="actions">
+      <button id="save">저장</button>
+      <button id="reset" class="secondary">기본값으로</button>
+      <span id="status"></span>
+    </div>
+  </main>
+  <script src="src/settings.js"></script>
+  <script src="src/edition.js"></script>
+  <script src="src/options-common.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

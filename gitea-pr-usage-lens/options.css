@@ -1,0 +1,74 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1f2328;
+  --muted: #636c76;
+  --border: #d0d7de;
+  --accent: #2f81f7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --text: #e6edf3;
+    --muted: #8d96a0;
+    --border: #30363d;
+    --accent: #4493f8;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+}
+main { max-width: 680px; margin: 32px auto; padding: 0 16px; }
+h1 { font-size: 22px; margin: 0 0 20px; }
+h2 { font-size: 15px; margin: 0 0 8px; }
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+label { display: block; margin: 10px 0; color: var(--muted); }
+input, select, textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+textarea { font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+.hint { color: var(--muted); font-size: 12px; margin: 6px 0; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+button {
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button.secondary, #instances button { background: transparent; color: var(--text); border-color: var(--border); }
+#add-form { display: flex; gap: 8px; }
+#add-form input { margin-top: 0; }
+#add-form button { flex: none; white-space: nowrap; }
+#instances { list-style: none; padding: 0; margin: 0 0 8px; }
+#instances li.instance { padding: 8px 0; border-bottom: 1px solid var(--border); }
+#instances .row { display: flex; align-items: center; gap: 8px; }
+#instances .row .base { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+#instances li.instance > input { margin-top: 6px; }
+#instances .warn { color: #d1242f; font-size: 12px; }
+#instances li.empty { color: var(--muted); }
+ul.hint, ol.hint { padding-left: 18px; }
+#instances li.instance > input.missing { border-color: #d1242f; }
+.actions { display: flex; align-items: center; gap: 8px; }
+#status { color: var(--muted); }

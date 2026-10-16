@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Gitea PR Usage Lens",
+  "version": "0.3.0",
+  "description": "Gitea PR diff에서 식별자에 마우스를 올리면 정의와 사용처를 이 PR 안 / PR 밖으로 나눠 보여줍니다.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Gitea PR Usage Lens"
+  }
+}
