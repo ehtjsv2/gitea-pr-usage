@@ -28,7 +28,7 @@ Effective date: 2026-10-16
 
 ### Contact
 
-GitHub issues: https://github.com/ehtjsv2/gitea-pr-usage-lens/issues
+GitHub issues: https://github.com/ehtjsv2/gitea-pr-usage/issues
 
 ---
 
@@ -56,4 +56,4 @@ GitHub issues: https://github.com/ehtjsv2/gitea-pr-usage-lens/issues
 
 ### 문의
 
-GitHub 이슈: https://github.com/ehtjsv2/gitea-pr-usage-lens/issues
+GitHub 이슈: https://github.com/ehtjsv2/gitea-pr-usage/issues
